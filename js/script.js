@@ -1,19 +1,19 @@
 // get the accordiaon element
-let faqs = document.querySelector('#faqs');
+let faqs = document.getElementById('faqs');
 
 // get all the h2 elements from the accordion
-let h2Elements = faqs.getElementsByTagName('h2');
+let h2Elements = faqs.getElementsByTagName('h2')
 
 // add an event handler to each h2 element
 const toggle = (e) => {
     // get the currently selected h2 element
-    let h2 = e.currentTarget;
+    let h2 = e.currentTarget
     // get the div for the currently selected h2 element
     let div = h2.nextElementSibling
 
     // handle removal of all calsses from h2 and div elemetns
     // loop through all h2 elements
-    for (h2Element of h2Elements) {
+    for (let h2Element of h2Elements) {
         if (h2Element !== e.currentTarget) {
             //remove class from h2
             h2Element.removeAttribute('class');
@@ -31,12 +31,12 @@ const toggle = (e) => {
     if (div.hasAttribute('class')) {
         div.removeAttribute('class');
     } else {
-        dv.setAttribute('class', 'open');
+        div.setAttribute('class', 'open');
     }  
    
 }
 
 //l loop through collection of h2 elements and attach toggle event handler to each
-for (h2Elements of h2Elements) {
-    h2Elements.addEventListener('click', toggle);
+for (h2Element of h2Elements) {
+    h2Element.addEventListener('click', toggle);
 }
